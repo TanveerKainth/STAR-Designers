@@ -1,7 +1,7 @@
 /**
  * SYST 17796 Project Winter 2020 Base code.
  * Students can modify and extend to implement their game.
- * Add your name as a modifier and the date!
+ * Parita
  */
 package ca.sheridancollege.project;
 
@@ -12,53 +12,59 @@ import java.util.ArrayList;
  * child of this class and instantiate the methods given.
  * @author Sivagama 
  */
-public abstract class Game 
-{
-    private final String gameName;//the title of the game
-    private ArrayList <Player> players;// the players of the game
-    
-    public Game(String givenName)
-    {
-        gameName = givenName;
-        players = new ArrayList();
-    }
+public class Game {
+	String suit;
+	int rank; 
+	public Game(String suit, int rank){
+		this.suit = suit; 
+		this.rank = rank;
+	}
+        public String FirstName(){
+            Name name = new Name(suit, rank);
+            return name.getName();
+        }
+	public String getImageName()
+        {
+            if(rank==1)
+            {
+                return "A" +this.suit.charAt(0);
+            }
+            if(rank==11)
+            {
+                return "J"+this.suit.charAt(0);
+            }
+            if(rank==12)
+            {
+                return "Q"+this.suit.charAt(0);
+            }
+            if(rank==13)
+            {
+			return "K" + this.suit.charAt(0);
+            }
+            return ""+ rank +this.suit.charAt(0);
+        }
+       
+	   //gets value of card
+	public int getBlackjackValue(){
+		if (rank > 10){
+			return 10;}
+		return rank;}
+	public int getBlackjackValue1(){
+		if (rank > 10){
+			return 10;}
+		return rank;}
 
-    /**
-     * @return the gameName
-     */
-    public String getGameName() 
-    {
-        return gameName;
-    }
-    
-     /**
-     * @return the players of this game
-     */
-    public ArrayList <Player> getPlayers() 
-    {
-        return players;
-    }
+    private static class Name {
 
-    /**
-     * @param players the players of this game
-     */
-    public void setPlayers(ArrayList <Player> players) 
-    {
-        this.players = players;
-    }
-    
-    /**
-     * Play the game. This might be one method or many method calls depending
-     * on your game.
-     */
-    public abstract void play();
-    
-    /**
-     * When the game is over, use this method to declare and display a winning
-     * player.
-     */
-    public abstract void declareWinner();
+        public Name() {
+        }
 
-   
-    
+        private Name(String suit, int rank) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        private String getName() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+    }
 }//end class

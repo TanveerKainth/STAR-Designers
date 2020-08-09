@@ -1,7 +1,7 @@
 /**
  * SYST 17796 Project Winter 2020 Base code.
  * Students can modify and extend to implement their game.
- * Add your name as a modifier and the date!
+ * Parita
  */
 package ca.sheridancollege.project;
 
@@ -19,8 +19,19 @@ public abstract class Card
      * Students should implement this method for their specific children classes 
      * @return a String representation of a card. Could be an UNO card, a regular playing card etc.
      */
-    
     @Override
     public abstract String toString();
+
+    int getBlackjackValue1() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    int getBlackjackValue() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    String getImageName() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
